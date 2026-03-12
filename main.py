@@ -26,7 +26,7 @@ def get_weather(city:str)-> str:
     """Get weather for a given city"""
     return f"The weather is sunny in {city}:"    
 
-mcp_app = mcp.http_app()        
+mcp_app = mcp.streamable_http_app()        
 
 
 # todo----------------------------------Sir Hamzah 1st Code -----------------------------------------------------
