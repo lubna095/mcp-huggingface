@@ -26,10 +26,20 @@ def get_weather(city:str)-> str:
     """Get weather for a given city"""
     return f"The weather is sunny in {city}:"    
 
-mcp_app = mcp.streamable_http_app()        
+mcp_app = mcp.streamable_http_app() 
+
+app = FastAPI()
+
+@app.get("/")
+def home():
+    return {"message": "MCP Server Running"}
+
+app.mount("/", mcp_app)
 
 
-# todo----------------------------------Sir Hamzah 1st Code -----------------------------------------------------
+# todo----------------------------------Sir Hamzah 1st Code -----------------------------------------
+# ! Problem sirf ye hai ke FastMCP root / endpoint provide nahi karta.
+# ! is leye not found araha tha, to fastapi ka endpoint add kia h, 
 
 # mcp = FastMCP(name ="Hello mcp_server", stateless_http= True) # when True we don't need handshake.
 
