@@ -17,6 +17,17 @@ except ImportError:
     if hasattr(mcp, "settings"):
         mcp.settings.host = "0.0.0.0"
 
+@mcp.tool()
+def  hello(name: str)-> str:
+    return f"hi i am mcp tool {name}"
+
+@mcp.tool()
+def get_weather(city:str)-> str:
+    """Get weather for a given city"""
+    return f"The weather is sunny in {city}:"    
+
+mcp_app = mcp.http_app()        
+
 
 # todo----------------------------------Sir Hamzah 1st Code -----------------------------------------------------
 
